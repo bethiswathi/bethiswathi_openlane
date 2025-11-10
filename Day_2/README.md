@@ -58,15 +58,53 @@ Utilization = (Area of netlist) / (Core area)
 - Ensures the design is ready for placement and routing.
 
 
+| **Step**     | **Function**               | **Description**                                                                                         |
+| ------------ | -------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **init_fp**  | Initialize Floorplan       | Defines the **core area**, creates **placement rows**, and generates **routing tracks** for the design. |
+| **ioplacer** | I/O Pin Placement          | Automatically places the **macro input/output pins** around the core boundary.                          |
+| **pdn**      | Power Distribution Network | Generates the **power grid** (VDD/GND rings, straps, rails) for proper power delivery across the chip.  |
+| **tapcell**  | Tapcell & Decap Insertion  | Inserts **well-tap cells** for substrate/well biasing and **decap cells** to reduce IR drop and noise.  |
 
 
 
-### Steps To Run Floorplan Using OpenLane
+### Steps To Run Floorplan Using OpenLane in Codespaces
+
 ### Review Floorplan Files and Steps to view floorplan
 ### Review Floorplan Layout in Magic
 
 ## Library Binding and Placement
+
 ### Netlist Binding and initial place design
+- Netlist binding refers to the process of mapping the logical elements in the synthesized netlist to the physical cells in the physical design (PD) environment.
+- In physical design tools (like OpenROAD/OpenLANE, Innovus, ICC2), the flow needs to bind or associate:
+- Each logical cell instance → to a specific physical cell from the standard cell library
+- Each logical port/net → to its physical pin information from the LEF/lib files
+
+## ✅ Why Netlist Binding Is Important
+### 1. Ensures correct mapping
+- Links each logical gate (NAND, INV, DFF, etc.) to a physical layout view.
+
+### 2. Enables physical placement
+- Without binding, the tool cannot create placement rows, locations, or routing resources.
+
+### 3. Validates library compatibility
+- Checks if the design uses only available cells from the target technology.
+
+### 4. Creates internal data structures
+- The tool builds timing graphs, placement objects, and routing anchors.
+
+## ✅ What Happens During Netlist Binding  
+| Process        | Description                                                         |
+| -------------- | ------------------------------------------------------------------- |
+| Read netlist   | Parse Verilog or synthesized gate-level netlist                     |
+| Read libraries | Load `.lib` for timing and `.lef` for physical geometry             |
+| Match cells    | Bind each netlist cell instance to its standard-cell master         |
+| Resolve pins   | Connect logical nets to physical pin locations                      |
+| Check legality | Verify no missing cells, mismatched pins, or unsupported constructs |
+
+
+
+
 ### Optimize Placement Using Estimated wire length and capacitance
 ### Final Placement Optimization
 ### Need for Libraries and Characterizarization
