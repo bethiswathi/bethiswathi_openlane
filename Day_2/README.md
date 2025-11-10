@@ -66,7 +66,6 @@ Utilization = (Area of netlist) / (Core area)
 | **tapcell**  | Tapcell & Decap Insertion  | Inserts **well-tap cells** for substrate/well biasing and **decap cells** to reduce IR drop and noise.  |
 
 
-
 ### Steps To Run Floorplan Using OpenLane in Codespaces
 
 ### Review Floorplan Files and Steps to view floorplan
