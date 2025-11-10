@@ -72,9 +72,8 @@ Utilization = (Area of netlist) / (Core area)
 ### Review Floorplan Files and Steps to view floorplan
 ### Review Floorplan Layout in Magic
 
-## Library Binding and Placement
 
-### Netlist Binding and initial place design
+## Netlist Binding and initial place design
 - Netlist binding refers to the process of mapping the logical elements in the synthesized netlist to the physical cells in the physical design (PD) environment.
 - In physical design tools (like OpenROAD/OpenLANE, Innovus, ICC2), the flow needs to bind or associate:
 - Each logical cell instance → to a specific physical cell from the standard cell library
@@ -105,20 +104,8 @@ Utilization = (Area of netlist) / (Core area)
 
 
 
-### Optimize Placement Using Estimated wire length and capacitance
-### Final Placement Optimization
-### Need for Libraries and Characterizarization
-### Congestion Aware Placement Using Replace
 
-## Cell Design and Charaterization Flows
-### Inputs for Cell Design Flow
-### Circuit Design Step
-### Layout Design Step
-### Typical Characterization Flow
 
-## General Timing Parameters
-### Timing Threshold Definitions
-### Propogation Delay and Transition Time
 
 
 
