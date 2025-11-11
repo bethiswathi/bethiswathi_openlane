@@ -73,7 +73,7 @@ Below is the result of SPICE simulation for transient analysis:
 <img width="645" height="361" alt="image" src="https://github.com/user-attachments/assets/5d83e256-fe7c-46b5-8f0c-32fa0c519aa9" />
 
 ## Layout and Metal Layers
-When polysilicon crosses N-diffusion/P-diffusion (diffusion is also called implantation), then an NMOS/PMOS is created. Explained here is the reason why the diffusion layer of source and drain "seems" to be connected under the polysilicon (diffusion layer for source and drain supposedly be separated).
+When polysilicon crosses N-diffusion/P-diffusion (diffusion is also called implantation), then an NMOS/PMOS is created. Explained <a href="https://electronics.stackexchange.com/questions/223973/why-diffusions-in-cmos-cad-tool-magic-is-continuous" here is the reason why the diffusion layer of source and drain "seems" to be connected under the polysilicon (diffusion layer for source and drain supposedly be separated).
 
 The first layer is local-interconnect layer or local-i then metal 1 to 5. Here is the process stack diagram of sky130nm PDK. Metal 1 is for Power and Ground lines. Nsubstratecontact connects the N-well to locali. licon connects the locali to metal1.Locali is for local connections of cells.
 
