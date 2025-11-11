@@ -139,8 +139,9 @@ The task is to characterize a sample inverter cell by its slew rate and propagat
 ```
 magic -T ./libs/sky130A.tech sky130_inv.mag & 
 ```
-
 <img width="940" height="573" alt="image" src="https://github.com/user-attachments/assets/ae011a66-601f-4b74-b638-a8710e273bc7" /></br>
+
+To center the view, press "s" to select whole die then press "v" to center the view. Point the cursor to a cell then press "s" to select it, zoom into it by pressing 'z". Type "what" in tkcon to display information of selected object
 
 3. Make an extract file .ext by typing the following command in the tkon terminal.
 ```
@@ -151,11 +152,11 @@ magic -T ./libs/sky130A.tech sky130_inv.mag &
    ext2spice cthresh 0 rthresh 0
    ext2spice 
 ```
-<img width="940" height="471" alt="image" src="https://github.com/user-attachments/assets/86846d26-f844-4479-84b5-922fea8445df" /></br>
-<img width="940" height="315" alt="image" src="https://github.com/user-attachments/assets/c0c5196c-e5e6-463c-9f15-b3448d3ee7b7" /></br>
+<img width="840" height="401" alt="image" src="https://github.com/user-attachments/assets/86846d26-f844-4479-84b5-922fea8445df" /></br>
+<img width="840" height="310" alt="image" src="https://github.com/user-attachments/assets/c0c5196c-e5e6-463c-9f15-b3448d3ee7b7" /></br>
 
 Below is the initial spice file 
-<img width="940" height="379" alt="image" src="https://github.com/user-attachments/assets/bf9b3e81-21d1-4f6e-8115-542d9b02b5fb" />
+<img width="840" height="379" alt="image" src="https://github.com/user-attachments/assets/bf9b3e81-21d1-4f6e-8115-542d9b02b5fb" />
 
 Few modifications needs to be done in spice deck file
 - Scale needs to be aligned with the layout grid size and check the model name from pshort.lib and nshort.lib
@@ -225,6 +226,38 @@ Using this transient response, we will now characterize the cell's slew rate and
 - Fall Delay [delay between 50%(1.65V) of input to 50%(1.65V) of output]:
    - D_f = 4.05364ns - 4.05001ns =0.00363ns
 <img width="727" height="113" alt="image" src="https://github.com/user-attachments/assets/6e29acad-2b8f-4afb-b55d-45b2a14bdbb6" />
+
+
+## Lab 2: Fix Tech File DRC via Magic
+Read through <a href="http://opencircuitdesign.com/magic/techref/maint2.html">this site about tech file</a>. All technology-specific information comes from a technology file. This file includes such information as layer types used, electrical connectivity between types, design rules, rules for mask generation, and rules for extracting netlists for circuit simulation. Read through also <a href="https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#rules-periphery--page-root">this site on the DRC rules for SKY130nm PDK</a>
+
+1. Download the <a href="lab contents from this site</a>. Extract the tarball. Inside the drc_tests/ are the .mag layout files and the sky130A.tech.
+
+2. Open magic with poly.mag as input: magic poly.mag. Focus on Incorrect poly.9 layout. As described on the poly.9 <a href="https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#poly">design rule of SKY130 PDK</a>, the spacing between polyresistor with poly or diff/tap must at least be 0.480um. Using :box, we can see that the distance is 0.250um YET there is no DRC violations shown. Our goal is to fix the tech file to include that DRC.
+
+<img width="910" height="382" alt="image" src="https://github.com/user-attachments/assets/51c7ecf8-4af6-4ec8-8b0b-e49bb3e3ef7d" />
+
+3. Open sky130A.tech. The included rules for poly.9 are only for the spacing between the n-poly resistor with n-diffusion and the spacing between the p-poly resistor with diffusion. We will now add new rules for the spacing between the poly resistor with poly non-resistor, highlighted green below are the two added rules. On the left is the rule for spacing between n-poly resistor with poly non-resistor and on the right is the rule for the spacing between the p-poly resistor with poly non-resistor. The allpolynonres is a macro under alias section of techfile.
+
+<img width="840" height="174" alt="image" src="https://github.com/user-attachments/assets/8a0cb045-8b32-4336-af0a-f195655cdc17" />
+
+4. Run tech load sky130A.tech then drc check in tkcon to reload the tech file. The new DRC rules will now take effect.Notice the white dots on the poly indicating the design rule violations. Command drc find to iterate in each violations.
+
+<img width="840" height="453" alt="image" src="https://github.com/user-attachments/assets/4ee1380e-a0ff-4593-b9f0-60f226ae92aa" />
+
+5. Next, notice below that there are violations between N-substrate diffusion with the polyresistors (from left: npolyres, ppolyres, xpolyres) which is good. But between npolyres with P-substrate diffusion, there is no violation shown.
+
+<img width="840" height="381" alt="image" src="https://github.com/user-attachments/assets/297d2deb-218e-40a3-9c19-7aafb85ed59c" />
+
+6. To fix that, just modify the tech file to include not only the spacing between npolyres with N-substrate diffusion in poly.9 but between npolyres and all types of diffusion. alldif is also a macro under alias section. Load the tech file again, the new DRC will now take effect.
+
+<img width="840" height="239" alt="image" src="https://github.com/user-attachments/assets/bca94299-5089-4333-a8c6-378bf74dfa61" /></br>
+<img width="839" height="360" alt="image" src="https://github.com/user-attachments/assets/aacbaddd-83e4-4930-a2e4-1c75310578cc" />
+
+
+
+
+
 
 
 
