@@ -214,8 +214,6 @@ To delete all generated runs under all designs: `make clean_runs`
 ### Skywater PDK Files
 - The Skywater PDK files we are working with are described under $PDK_ROOT. There are three subdirectories needed.
 
-
-
 1. Skywater-pdk – Contains all the foundry provided PDK related files
 2. Open_pdks – Contains scripts that are used to bridge the gap between closed-source and open-source PDK to EDA tool compatibility
 3. Sky130A – Open-source-compatible PDK files for Skywater, designed to work with open-source EDA tools for ASIC development without proprietary dependencies.
@@ -231,15 +229,8 @@ sudo apt install -y build-essential python3 python3-venv python3-pip \
      libboost-python-dev libboost-filesystem-dev zlib1g-dev
 
 ```
-### Install Docker (recommended way to run OpenLane)
-OpenLane uses Docker to ensure a consistent environment
-
-
 
 ## Invoking OpenLane
-
-
-
 - /flow.tcl is the script which runs the OpenLANE flow
 - OpenLANE can be run interactively or in autonomous mode
 - To run interactively, use the -interactive option with the ./flow.tcl script
