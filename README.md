@@ -2,7 +2,7 @@
 
 This week focusses on OpenLane installation and running the complete RTL to GDSII flow and observing the layout in magic tool
 
-Day_1: Basics of Id vs Vds <a href="Day_1/README.md">README.md</a>
+Day_1: Overview from Architecture to Hardware <a href="Day_1/README.md">README.md</a>
 
 Day_2: Basics of Id vs Vds <a href="Day_2/README.md">README.md</a>
 
