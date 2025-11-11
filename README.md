@@ -10,4 +10,4 @@ Day_3: Design Library cell Using Magic Layout and ngspice <a href="Day_3/README.
 
 Day_4: Pre-Layout Timing Analysis and Importance of Clock Tree <a href="Day_4/README.md">README.md</a>
 
-Day_5: Basics of Id vs Vds <a href="Day_5/README.md">README.md</a>
+Day_5: Final Steps for RTL2GDS <a href="Day_5/README.md">README.md</a>
