@@ -80,10 +80,12 @@ The first layer is local-interconnect layer or local-i then metal 1 to 5. <a hre
 
 The layer hierarchy for NMOS is: Psubstrate -> Psubstrate Diffusion (psd) -> Psubstrate Contact (psc) -> Local-interconnect (li) -> Mcon -> Metal1. For poly: Poly -> Polycontact -> Locali. P-substrate diffusion an N-substrate diffusion is also referred to as P-tap and N-tap.
 
-The output of the layout is the LEF file. LEF (Library Exchange Format) is used by the router tool in PnR design to get the location of standard cells pins to route them properly. So it is basically the abstract form of layout of a standard cell. picorv32a/runs/[DATE]/tmp contains the merged lef files (cell LEF and tech LEF). Notice how metal layer directon (horizontal or vertical) is alternating. Also, metal layer width and thickness is increasing.
+The output of the layout is the LEF file. <a href="https://teamvlsi.com/2020/05/lef-lef-file-in-asic-design.html">LEF (Library Exchange Format)</a> is used by the router tool in PnR design to get the location of standard cells pins to route them properly. So it is basically the abstract form of layout of a standard cell. picorv32a/runs/[DATE]/tmp contains the merged lef files (cell LEF and tech LEF). Notice how metal layer directon (horizontal or vertical) is alternating. Also, metal layer width and thickness is increasing.
 
 
 ## Magic Commands
+<a href="https://www.youtube.com/watch?v=RPppaGdjbj0">Here is a video guide</a> on layout using Magic. And <a href="http://opencircuitdesign.com/magic/">here is the Magic website</a> with tutorials.
+
 - Right click = upper-right corner of box
 - "z" = zoom in, "Z" = zoom out, "ctrl + z" = zoom into the box
 - Middle click on empty area will turn the box into empty (similar to erasing it)
