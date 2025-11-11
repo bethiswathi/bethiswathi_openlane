@@ -208,17 +208,23 @@ plot y vs time a
 
 <img width="840" height="444" alt="image" src="https://github.com/user-attachments/assets/84a0ed9a-f3ad-4776-93ab-8ba188929a2c" />
 
+Using this transient response, we will now characterize the cell's slew rate and propagation delay:
 
+- Rise Transition [output transition time from 20%(0.66V) to 80%(2.64V)]:
+   - Tr_r = 2.19981ns - 2.15739ns = 0.04242 ns
+<img width="672" height="173" alt="image" src="https://github.com/user-attachments/assets/f125d354-0ce0-4b31-ab55-682aad54ccc0" />
 
+- Fall Transition [output transition time from 80%(2.64V) to 20%(0.66V)]:
+   - Tr_f = 4.0672ns - 4.04007ns = 0.02713ns
+<img width="589" height="173" alt="image" src="https://github.com/user-attachments/assets/5dc37729-6719-4b21-8093-887c53f884cb" />
 
+- Rise Delay [delay between 50%(1.65V) of input to 50%(1.65V) of output]:
+   - D_r = 2.18197ns - 2.15003ns = 0.03194ns
+<img width="698" height="125" alt="image" src="https://github.com/user-attachments/assets/68121e9a-bf84-4ea9-bda0-fd51e7500674" />
 
-
-
-
-
-
-
-
+- Fall Delay [delay between 50%(1.65V) of input to 50%(1.65V) of output]:
+   - D_f = 4.05364ns - 4.05001ns =0.00363ns
+<img width="727" height="113" alt="image" src="https://github.com/user-attachments/assets/6e29acad-2b8f-4afb-b55d-45b2a14bdbb6" />
 
 
 
