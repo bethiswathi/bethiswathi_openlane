@@ -148,7 +148,8 @@ magic -T ./libs/sky130A.tech sky130_inv.mag &
 ```
 4. Extract the .spice file from this ext file by typing the following command in the tcon terminal.
 ```
-   ext2spice cthresh 0 rthresh 0 then ext2spice 
+   ext2spice cthresh 0 rthresh 0
+   ext2spice 
 ```
 <img width="940" height="471" alt="image" src="https://github.com/user-attachments/assets/86846d26-f844-4479-84b5-922fea8445df" /></br>
 <img width="940" height="315" alt="image" src="https://github.com/user-attachments/assets/c0c5196c-e5e6-463c-9f15-b3448d3ee7b7" /></br>
