@@ -8,6 +8,6 @@ Day_2: Chip Floorplan Considerations <a href="Day_2/README.md">README.md</a>
 
 Day_3: Design Library cell Using Magic Layout and ngspice <a href="Day_3/README.md">README.md</a>
 
-Day_4: Basics of Id vs Vds <a href="Day_4/README.md">README.md</a>
+Day_4: Pre-Layout Timing Analysis and Importance of Clock Tree <a href="Day_4/README.md">README.md</a>
 
 Day_5: Basics of Id vs Vds <a href="Day_5/README.md">README.md</a>
