@@ -67,6 +67,7 @@ Utilization = (Area of netlist) / (Core area)
 
 
 ### Steps To Run Floorplan Using OpenLane in Codespaces
+Day_1: Basics of Id vs Vds <a href="Day_1/README.md">README.md</a>
 
 ### Review Floorplan Files and Steps to view floorplan
 ### Review Floorplan Layout in Magic
