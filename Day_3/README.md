@@ -20,7 +20,28 @@ Configurations on OpenLANE can be changed on the flight. For example, to change 
 [component name] [drain] [gate] [source] [substrate] [transistor type] W=[width] L=[length]
 - All components are described based on nodes and its values
 - .op is the start of SPICE simulation operation where Vin will be sweep from 0 to 2.5 with 0.5 steps
-- tsmc_025um_model.mod is the model file containing the technological parameters for the 0.25um NMOS and PMOS The steps to simulate in SPICE:
+- tsmc_025um_model.mod is the model file containing the technological parameters for the 0.25um NMOS and PMOS.
+
+Build basic CMOS inverter netlist spice deck file using ngspice and perform dc and transient analysis. Understanding basic terminologies of CMOS inverter like static and dynamic characteristics.
+
+## ✅ CMOS Inverter Characteristics
+
+| **Category**                | **Parameter**                 | **Meaning / Definition**                                                                    |
+| --------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------- |
+| **Static Characteristics**  | **VIL** (Input Low Voltage)   | Maximum input voltage recognized as logic **LOW** (before inverter output starts dropping). |
+|                             | **VIH** (Input High Voltage)  | Minimum input voltage recognized as logic **HIGH** (before inverter output starts rising).  |
+|                             | **VOL** (Output Low Voltage)  | Output voltage when input is HIGH and NMOS is ON (ideally ≈ 0 V).                           |
+|                             | **VOH** (Output High Voltage) | Output voltage when input is LOW and PMOS is ON (ideally ≈ VDD).                            |
+|                             | **Switching Threshold (VM)**  | Vin value where **Vout = Vin** on the VTC curve — inverter switching point.                 |
+|                             | **Noise Margin Low (NML)**    | NML = VIL – VOL → amount of allowable LOW-level noise.                                      |
+|                             | **Noise Margin High (NMH)**   | NMH = VOH – VIH → amount of allowable HIGH-level noise.                                     |
+| **Dynamic Characteristics** | **tpHL** (High-to-Low delay)  | Delay when output transitions from **HIGH → LOW** after an input rising edge.               |
+|                             | **tpLH** (Low-to-High delay)  | Delay when output transitions from **LOW → HIGH** after an input falling edge.              |
+|                             | **Rise Time (tr)**            | Time for output to rise from **10% → 90%** of VDD.                                          |
+|                             | **Fall Time (tf)**            | Time for output to fall from **90% → 10%** of VDD.                                          |
+
+
+- The following are the steps to simulate in SPICE:
 
 ```
 source [filename].cir
