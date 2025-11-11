@@ -73,10 +73,6 @@ Floorplanning phase generates DEF file which contains core area and placement de
    - DEF file from floorplan phase
    - Merged LEF from preparation phase
 
-
-### Steps To Run Floorplan Using OpenLane in Codespaces
-Day_1: VSD OpenLane Codespace <a href="README.md">README.md</a>
-
 ## Netlist Binding and initial place design
 - Netlist binding refers to the process of mapping the logical elements in the synthesized netlist to the physical cells in the physical design (PD) environment.
 - In physical design tools (like OpenROAD/OpenLANE, Innovus, ICC2), the flow needs to bind or associate:
