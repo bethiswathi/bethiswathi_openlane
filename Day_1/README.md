@@ -230,7 +230,7 @@ sudo apt install -y build-essential python3 python3-venv python3-pip \
 
 ```
 ### Steps To Run Floorplan Using OpenLane in Codespaces
-VSD OpenLane Codespace <a href="README.md">README.md</a>
+VSD OpenLane Codespace <a href="https://github.com/vsdip/vsd-openlane/README.md">README.md</a>
 
 ## Invoking OpenLane
 - /flow.tcl is the script which runs the OpenLANE flow
