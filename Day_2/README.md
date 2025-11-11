@@ -101,6 +101,65 @@ Floorplanning phase generates DEF file which contains core area and placement de
 | Resolve pins   | Connect logical nets to physical pin locations                      |
 | Check legality | Verify no missing cells, mismatched pins, or unsupported constructs |
 
+## Standard Cell Design Flow and Library Requirements 
+- In all RTL-to-GDSII flows, EDA tools depend on **standard-cell libraries** that contain logic gates (AND, OR, buffers), macros, IPs, decaps, and different variants of each cell (different sizes, threshold voltages, and drive strengths).
+- Larger cells offer higher drive strength but occupy more area and may switch slower depending on threshold voltage.
+
+## ✅ Inputs Required to Design a Single Library Cell
+A standard cell is created using foundry-provided PDK (Process Design Kit) data plus user specifications:
+
+1. PDK Files
+- **DRC & LVS Rules**: Technology files, layer rules, poly/substrate parameters → ensure layout correctness.
+- **SPICE Models**: Foundry MOSFET electrical models (threshold voltage, mobility, saturation behavior), NMOS/PMOS parameters → used for circuit simulations.
+
+2. User-Specified Requirements
+- **Cell height** (fixed by power/ground rail spacing)
+- **Cell width** (depends on transistor sizing/drive strength)
+- **Supply voltage (VDD)**
+- **Metal layer requirements** for pin connections
+
+These constraints ensure the cell works reliably when integrated into a chip.
+
+## ✅ Library Cell Design Steps
+1. Circuit Design
+- Create the logic function using PMOS/NMOS transistors.
+- Produce a **CDL (Circuit Description Language)** netlist.
+
+2. Transistor Sizing
+- Size NMOS and PMOS devices to meet delay, power, and drive-strength targets based on SPICE models.
+
+3. Layout Design
+- Use **Euler’s path** and **stick diagrams** to determine optimal transistor arrangement.
+- Draw layout using tools like **Magic**.
+- Must follow all DRC and LVS rules.
+
+4. Outputs of Layout
+- **GDSII file** → actual mask layout
+- **LEF file** → abstract view (cell width/height, pins, blockages)
+- **Extracted SPICE netlist (.cir)** → includes parasitic R, C for accurate simulation
+
+
+## ✅ Cell Characterization
+After layout, the cell is characterized (e.g., using **GUNA** or similar software):
+- **Timing** (rise/fall delays, setup/hold times)
+- **Noise** characteristics
+- **Power** (dynamic, leakage)
+
+These results are used to generate:
+- .lib timing libraries
+- .db binary timing libraries
+
+These become essential inputs for synthesis, P&R, STA, and any RTL-to-GDSII tool
+
+
+
+
+
+
+
+
+
+
 
 
 
