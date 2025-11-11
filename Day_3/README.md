@@ -76,7 +76,7 @@ Below is the result of SPICE simulation for transient analysis:
 When polysilicon crosses N-diffusion/P-diffusion (diffusion is also called implantation), then an NMOS/PMOS is created. Explained 
 <a href="https://electronics.stackexchange.com/questions/223973/why-diffusions-in-cmos-cad-tool-magic-is-continuous">here</a> is the reason why the diffusion layer of source and drain "seems" to be connected under the polysilicon (diffusion layer for source and drain supposedly be separated).
 
-The first layer is local-interconnect layer or local-i then metal 1 to 5. <a href="https://skywater-pdk.readthedocs.io/en/main/rules/assumptions">Here is the process stack diagram</a> of sky130nm PDK. Metal 1 is for Power and Ground lines. Nsubstratecontact connects the N-well to locali. licon connects the locali to metal1.Locali is for local connections of cells.
+The first layer is local-interconnect layer or local-i then metal 1 to 5. <a href="https://skywater-pdk.readthedocs.io/en/main/rules/assumptions.html">Here is the process stack diagram</a> of sky130nm PDK. Metal 1 is for Power and Ground lines. Nsubstratecontact connects the N-well to locali. licon connects the locali to metal1.Locali is for local connections of cells.
 
 The layer hierarchy for NMOS is: Psubstrate -> Psubstrate Diffusion (psd) -> Psubstrate Contact (psc) -> Local-interconnect (li) -> Mcon -> Metal1. For poly: Poly -> Polycontact -> Locali. P-substrate diffusion an N-substrate diffusion is also referred to as P-tap and N-tap.
 
