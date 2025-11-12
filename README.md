@@ -1,4 +1,4 @@
-# Inception of OpenLane Using Sky130 PDk 
+# 🚀 Inception of OpenLane Using Sky130 PDk 
 
 This week focusses on OpenLane installation and running the complete RTL to GDSII flow and observing the layout in magic tool
 
