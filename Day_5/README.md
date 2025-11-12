@@ -25,7 +25,7 @@ As shown below, power and ground flows from power/ground pads -> power/ground ri
 
 
 ## Routing Stage and TritonRoute
-OpenLane routing stage consists of two stages:
+OpenLane routing stage consists of the following two stages:
 - Global Routing - Form routing guides that can route all the nets. The tool used is FastRoute
 - Detailed Routing - Uses the global routing's guide to actually connect the pins with least amount of wire and bends. The tool used is TritonRoute.
 
