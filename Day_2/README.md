@@ -155,7 +155,7 @@ These become essential inputs for synthesis, P&R, STA, and any RTL-to-GDSII tool
 ## Timing Characterization
 Below are the timing variables for slew. This is two inverters in series, red is output of first inverter and blue is output of second inverter:
 
-<img width="710" height="385" alt="image" src="https://github.com/user-attachments/assets/01dfbbc7-ff12-485d-861c-525d19745267" />
+<img width="710" height="385" alt="image" src="https://github.com/user-attachments/assets/01dfbbc7-ff12-485d-861c-525d19745267" /></br>
 
 Below are the timing variables for propagation delay. The red is input waveform and blue is output waveform of the buffer. The left side is rise delay and right side is fall delay.
 
