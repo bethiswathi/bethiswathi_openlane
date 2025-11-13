@@ -27,16 +27,16 @@ prep -design picorv32a -tag [date]
 To ensure the PnR tool can route to the cells correctly, the layout must follow these rules:
 
 1. Pin Alignment
-- Input and output pins must lie at track intersections
+- Input and output pins must lie at track intersections.
    → ensures routers can reach the pins easily.
 
 2. Cell Width and Height Must Align to Routing Grid
-- Width must be an odd multiple of the horizontal track pitch
-- Height must be an odd multiple of the vertical track pitch
+- Width must be an odd multiple of the horizontal track pitch.
+- Height must be an odd multiple of the vertical track pitch.
 
 This ensures:
-- Cells align properly in rows
-- Power/ground rails line up across all cells
+- Cells align properly in rows.
+- Power/ground rails line up across all cells.
 - Routing tracks line up from cell to cell
 
 To check these guidelines, we need to change the grid of Magic to match the actual metal tracks. The pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info contains those metal informations.
