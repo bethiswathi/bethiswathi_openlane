@@ -140,7 +140,7 @@ Used with SkyWater 130nm PDK, it enables fully open-source ASIC design.
 
 ## 🧩 OpenLane ASIC Flow
 
-<img width="940" height="497" alt="image" src="https://github.com/user-attachments/assets/2fb042cf-b8af-42a1-b17c-40e2aa3e1abb" /></br>
+<img width="840" height="497" alt="image" src="https://github.com/user-attachments/assets/2fb042cf-b8af-42a1-b17c-40e2aa3e1abb" /></br>
 
 1. Synthesis
 - **yosys/abc**: Perform RTL synthesis and technology mapping.
