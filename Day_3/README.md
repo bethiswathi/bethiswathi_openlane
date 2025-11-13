@@ -1,4 +1,4 @@
-# Design Library cell Using Magic Layout and ngspice Characterization
+# 🎯 Design Library cell Using Magic Layout and ngspice Characterization
 
 Configurations on OpenLANE can be changed on the flight. For example, to change IO_mode to be not equidistant, use % set ::env(FP_IO_MODE) 2; on OpenLANE. The IO pins will not be equidistant on mode 2 (default of 1). Run floorplan again via % run_floorplan and view the def layout on magic. However, changing the configuration on the fly will not change the runs/config.tcl, the configuration will only be available on the current session. To echo current value of variable: echo $::env(FP_IO_MODE)
 
@@ -15,7 +15,7 @@ Configurations on OpenLANE can be changed on the flight. For example, to change 
 ## SPICE Deck Netlist Description
 <img width="940" height="384" alt="image" src="https://github.com/user-attachments/assets/d0bc0993-9cd0-41c9-8b27-a14120f2bfbc" />
 
-### Notes:
+### ✅ Notes:
 - Syntax for the PMOS and NMOS descriptiom:
 [component name] [drain] [gate] [source] [substrate] [transistor type] W=[width] L=[length]
 - All components are described based on nodes and its values
@@ -51,7 +51,7 @@ dc1
 plot out vs in 
 ```
 
-## SPICE Analysis For Switching Threshold and Propogation Delay
+## 📊 SPICE Analysis For Switching Threshold and Propogation Delay
 
 CMOS robustness depends on:
 
@@ -93,7 +93,7 @@ Below is the result of SPICE simulation for transient analysis:
 
 <img width="645" height="361" alt="image" src="https://github.com/user-attachments/assets/5d83e256-fe7c-46b5-8f0c-32fa0c519aa9" />
 
-## Layout and Metal Layers
+## 🧱 Layout and Metal Layers
 When polysilicon crosses N-diffusion/P-diffusion (diffusion is also called implantation), then an NMOS/PMOS is created. Explained 
 <a href="https://electronics.stackexchange.com/questions/223973/why-diffusions-in-cmos-cad-tool-magic-is-continuous">here</a> is the reason why the diffusion layer of source and drain "seems" to be connected under the polysilicon (diffusion layer for source and drain supposedly be separated).
 
@@ -104,7 +104,7 @@ The layer hierarchy for NMOS is: Psubstrate -> Psubstrate Diffusion (psd) -> Psu
 The output of the layout is the LEF file. <a href="https://teamvlsi.com/2020/05/lef-lef-file-in-asic-design.html">LEF (Library Exchange Format)</a> is used by the router tool in PnR design to get the location of standard cells pins to route them properly. So it is basically the abstract form of layout of a standard cell. picorv32a/runs/[DATE]/tmp contains the merged lef files (cell LEF and tech LEF). Notice how metal layer directon (horizontal or vertical) is alternating. Also, metal layer width and thickness is increasing.
 
 
-## Magic Commands
+## ✅ Magic Commands
 <a href="https://www.youtube.com/watch?v=RPppaGdjbj0">Here is a video guide</a> on layout using Magic. And <a href="http://opencircuitdesign.com/magic/">here is the Magic website</a> with tutorials.
 
 - Right click = upper-right corner of box
@@ -228,7 +228,7 @@ Using this transient response, we will now characterize the cell's slew rate and
 <img width="727" height="113" alt="image" src="https://github.com/user-attachments/assets/6e29acad-2b8f-4afb-b55d-45b2a14bdbb6" />
 
 
-## Lab 2: Fix Tech File DRC via Magic
+## Lab 2: ⚒️ Fix Tech File DRC via Magic
 Read through <a href="http://opencircuitdesign.com/magic/techref/maint2.html">this site about tech file</a>. All technology-specific information comes from a technology file. This file includes such information as layer types used, electrical connectivity between types, design rules, rules for mask generation, and rules for extracting netlists for circuit simulation. Read through also <a href="https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#rules-periphery--page-root">this site on the DRC rules for SKY130nm PDK</a>
 
 1. Download the <a href="lab contents from this site</a>. Extract the tarball. Inside the drc_tests/ are the .mag layout files and the sky130A.tech.
