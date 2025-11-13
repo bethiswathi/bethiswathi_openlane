@@ -15,7 +15,6 @@
 
 <img width="386" height="308" alt="image" src="https://github.com/user-attachments/assets/3faa68d4-53a2-4244-8ca1-478493b5b215" />
 
-
 ## Power Distribution Network 
 This is just a review on PDN. The power and ground rails has a pitch of 2.72um thus the reason why the customized inverter cell has a height of 2.72 or else the power and ground rails will not be able to power up the cell. Looking at the LEF file runs/[date]/tmp/merged.nom.lef, you will notice that all cells are of height 2.72um and only width differs.
 
