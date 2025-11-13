@@ -1,4 +1,4 @@
-# 🎯 Overview from Architecture to Hardware
+# 🏗️ Overview from Architecture to Hardware
 
 <img width="900" height="450" alt="image" src="https://github.com/user-attachments/assets/1b763af4-1edf-4112-99d9-1782117384fb" /></br>
 
