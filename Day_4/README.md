@@ -1,9 +1,9 @@
-# Pre-Layout Timing Analysis and Importance of Clock Tree
+# 🎯 Pre-Layout Timing Analysis and Importance of Clock Tree
 To run previous flow, add tag to prep design:
 ```
 prep -design picorv32a -tag [date]
 ```
-## Lab 1: Extracting the LEF file
+## ✅ Lab 1: Extracting the LEF file
 - Place-and-Route (PnR) tools do not use the full Magic .mag layout (which contains layers, shapes, and transistor details).
 - Instead, they only need abstract information that allows placement and routing.
 - This abstract view is provided by the LEF (Library Exchange Format) file.
@@ -56,7 +56,7 @@ The grids show where the routing for the local-interconnet layer can only happen
 <img width="940" height="441" alt="image" src="https://github.com/user-attachments/assets/ef9418a3-44b6-4f8c-91f7-31d4db30a4e0" />
 
 
-## Lab 2: Plug-in the customized inverter cell into OpenLane
+## ✅ Lab 2: Plug-in the customized inverter cell into OpenLane
 - The SKY130 PDK provides Liberty <a href="https://teamvlsi.com/2020/05/lib-and-lef-file-in-asic-design.html">(.lib) timing files</a> in sky130_fd_sc_hd/lib/, containing timing and power data for each standard cell.
 - These files exist for different <a href="https://chipedge.com/resources/what-are-pvt-corners-in-vlsi/">PVT corners</a> (process–voltage–temperature), such as slow, typical, fast and voltages like 1.65 V, 1.80 V, 1.95 V.
 - A file like sky130_fd_sc_hd__ss_025C_1v80.lib represents the slow–slow corner, 25 °C, at 1.8 V, giving worst-case delays.
@@ -154,7 +154,7 @@ The solution for this error is found on this issue thread. basic_macro_placement
 4. After that run_placement, another error will occur relating to remove_buffers, the solution is to comment the call to remove_buffers_from_nets in OpenLane/scripts/tcl_commands/placement.tcl. After successfully running placement, runs/[date]/results/placement/picorv32.def will be created.
 
 
-## Lab 4: Locating the Inverter cell in Layout
+## 🧩 Lab 4: Locating the Inverter cell in Layout
 1. Search for instance of cell sky130_myinverter inside the DEF file after placement stage: cat picorv32.def | grep sky130_myinverter:
 2. Open the def file via magic:
 ```
