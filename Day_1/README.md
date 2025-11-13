@@ -2,7 +2,7 @@
 
 <img width="900" height="450" alt="image" src="https://github.com/user-attachments/assets/1b763af4-1edf-4112-99d9-1782117384fb" /></br>
 
-| **Component**                     | **Description**                                                                                                 |
+| **Component**                        | **Description**                                                                                                 |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | **Applications (Apps)**           | User-level programs that perform specific tasks or functions.                                                   |
 | **System Software**               | Acts as a bridge between hardware and applications, managing system resources and providing essential services. |
